@@ -6,6 +6,7 @@ const Navigation: React.FC = () => {
 
   const navigateToHome = () => navigate("/home");
   const navigateToShoppingCart = () => navigate("/cart");
+  const navigateToProducts = () => navigate("/products");
 
   return (
     <div>
@@ -18,6 +19,11 @@ const Navigation: React.FC = () => {
             <button onClick={() => navigateToShoppingCart()}>
               Shopping Cart
             </button>
+          </div>
+        </div>
+        <div>
+          <div>
+            <button onClick={() => navigateToProducts()}>Products</button>
           </div>
         </div>
       </nav>

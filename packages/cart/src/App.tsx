@@ -7,5 +7,4 @@ const App: React.FC = () => (
     <ShoppingCart />
   </div>
 );
-
 export default App;

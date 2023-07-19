@@ -8,30 +8,22 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: "app",
-      // TODO: check where to read these url's from ideally (environment specific)
-      remotes: [
-        {
-          cart: {
-            external: "http://localhost:5001/assets/cart.js",
-            from: "vite",
-            externalType: "url",
-          },
-          products: {
-            external: "http://localhost:5002/assets/products.js",
-            from: "vite",
-            externalType: "url",
-          },
-        },
-      ],
+      name: "products",
+      filename: "products.js",
+      exposes: {
+        "./Products": "./src/views/Products.tsx",
+      },
       shared: ["react", "react-dom", "react-router-dom"],
     }),
     tsconfigPaths(),
   ],
   preview: {
     host: "localhost",
-    port: 5000,
+    port: 5002,
     strictPort: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
   },
   build: {
     target: "esnext",

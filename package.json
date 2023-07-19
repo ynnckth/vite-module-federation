@@ -4,7 +4,8 @@
     "version": "1.0.0",
     "workspaces": [
         "packages/app",
-        "packages/cart"
+        "packages/cart",
+        "packages/products"
     ],
     "scripts": {
         "build": "npm run build --workspaces",

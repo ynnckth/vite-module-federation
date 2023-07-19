@@ -13,7 +13,12 @@ const Products: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div
+      style={{
+        borderStyle: "dashed",
+        borderColor: "var(--products-module-color)",
+      }}
+    >
       <h2>All Products [Products Remote Module]</h2>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "35px" }}>
         {products.map((p) => (

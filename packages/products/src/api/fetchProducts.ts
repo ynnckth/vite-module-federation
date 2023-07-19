@@ -20,7 +20,7 @@ export const fetchProducts = (): Promise<Product[]> => {
       name: "Infinite Improbability Drive",
       description:
         "This device allows spaceships to travel anywhere in the Universe you wanted with no chance of ever being intercepted. It works on the principle of generating a field of total improbability, making highly improbable things happen regularly",
-      unitPrice: 42,
+      unitPrice: 420,
     },
   ]);
 };

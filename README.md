@@ -1,7 +1,10 @@
 # vite-module-federation
 Getting started with micro-frontends and module federation with React and Vite
 
-Module overview:
+The idea is that the application is separated into several independently deployable frontend modules.
+Each module is maintained by a separate team. The app module is the host module that imports components exposed by the other remote modules.
+
+Overview and relationship of modules:
 ```
 app (host)
 ├── cart (remote)
@@ -43,6 +46,8 @@ Run the host app in preview mode:
 ```shell
 cd packages/app
 npm run preview
+# Alternatively run in development mode (with hot reload)
+# npm run dev
 ```
 > http://localhost:5000
 

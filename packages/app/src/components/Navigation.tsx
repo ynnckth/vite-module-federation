@@ -12,8 +12,8 @@ const Navigation: React.FC = () => {
     <div>
       <div>
         <button onClick={() => navigateToHome()}>Home</button>
-        <button onClick={() => navigateToShoppingCart()}>Shopping Cart</button>
         <button onClick={() => navigateToProducts()}>Products</button>
+        <button onClick={() => navigateToShoppingCart()}>Shopping Cart</button>
       </div>
     </div>
   );

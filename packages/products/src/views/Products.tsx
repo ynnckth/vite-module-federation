@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { fetchProducts } from "../api/fetchProducts.ts";
+import { Product } from "../types/Product.ts";
+import ProductCard from "../components/ProductCard.tsx";
 
 const Products: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    fetchProducts()
+      .then((products) => setProducts(products))
+      .catch((e) => console.error("Error fetching products: ", e));
+  }, []);
+
   return (
     <div>
-      <h2>All Products</h2>
-      {/* TODO: display a list of products */}
+      <h2>All Products [Products Remote Module]</h2>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "35px" }}>
+        {products.map((p) => (
+          <ProductCard key={p.id} product={p} />
+        ))}
+      </div>
     </div>
   );
 };

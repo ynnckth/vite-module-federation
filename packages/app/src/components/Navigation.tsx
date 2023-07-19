@@ -10,23 +10,11 @@ const Navigation: React.FC = () => {
 
   return (
     <div>
-      <nav>
-        <div>
-          <button onClick={() => navigateToHome()}>Home</button>
-        </div>
-        <div>
-          <div>
-            <button onClick={() => navigateToShoppingCart()}>
-              Shopping Cart
-            </button>
-          </div>
-        </div>
-        <div>
-          <div>
-            <button onClick={() => navigateToProducts()}>Products</button>
-          </div>
-        </div>
-      </nav>
+      <div>
+        <button onClick={() => navigateToHome()}>Home</button>
+        <button onClick={() => navigateToShoppingCart()}>Shopping Cart</button>
+        <button onClick={() => navigateToProducts()}>Products</button>
+      </div>
     </div>
   );
 };

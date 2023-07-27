@@ -20,7 +20,6 @@ const ProductCard: React.FC<Props> = ({ product }) => {
       </div>
       <p>{product.description}</p>
       <p>{`Unit price: $${product.unitPrice}`}</p>
-      {/* TODO: add button to add to cart (should be imported from cart module) */}
     </div>
   );
 };

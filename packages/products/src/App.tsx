@@ -1,10 +1,10 @@
 import React from "react";
-import Products from "./views/Products.tsx";
+import ProductsWidget from "./components/ProductsWidget.tsx";
 
 const App: React.FC = () => (
   <div>
     <h1>Remote Products Module</h1>
-    <Products />
+    <ProductsWidget />
   </div>
 );
 export default App;

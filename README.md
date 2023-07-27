@@ -6,9 +6,10 @@ Each module is maintained by a separate team. The app module is the host module 
 
 Overview and relationship of modules:
 ```
-app (host)
-├── cart (remote)
-└── products (remote)
+dashboard (host, vite)
+├── customers (remote, vite)
+├── orders (remote, cra/webpack)
+└── products (remote, vite)
 ```
 
 ## Development Setup
@@ -25,10 +26,10 @@ Build all packages:
 npm run build
 ```
 
-### Shopping Cart
+### Customers
 Run the shopping cart module in preview mode:
 ```shell
-cd packages/cart
+cd packages/customers
 npm run preview
 ```
 > http://localhost:5001
@@ -41,10 +42,18 @@ npm run preview
 ```
 > http://localhost:5002
 
-### App (Host Application)
+### Orders
+Run the orders module in preview mode:
+```shell
+cd packages/orders
+npm run preview
+```
+> http://localhost:5003
+
+### Dashboard (Host Application)
 Run the host app in preview mode:
 ```shell
-cd packages/app
+cd packages/dashboard
 npm run preview
 # Alternatively run in development mode (with hot reload)
 # npm run dev
@@ -55,15 +64,11 @@ npm run preview
 
 ## Open Points
 
+- [ ] How do I add shared TS types to be reused by remotes and host?
 - [ ] Read remote URL's from environment variables (how to deal with different environments?)
-- [ ] How do I pass data to a remote module (e.g. add products to the shopping cart) -> props, callbacks, events, etc.?
-- [ ] Should the host manage all state or should remotes hold their own state?
 - [ ] Should the remotes simply expose components for the host to import or should they host a fully fledged UI as well?
 - [ ] Error handling when a remote module goes down?
+ - Failsafe mechanisms such as re-attempting to fetch the remote?
+ - Rendering a fallback component/element if imported remote component is not available?
+ - You can use error boundaries around imported remote components and render a fallback -> how to do this consistently?
 - [ ] Experiment with a remote module written in another technology (e.g. Angular or Svelte)
-- [ ] Do styles from host influence imported remotes?
-
-Idea:
-- Cart module exposes the main `ShoppingCart` component which manages its own state (products in cart)
-- Cart module exposes an additional `AddToCartButton` component which is embedded into each product and puts the current product into the shopping cart
-

@@ -3,9 +3,10 @@
     "private": true,
     "version": "1.0.0",
     "workspaces": [
-        "packages/app",
-        "packages/cart",
-        "packages/products"
+        "packages/dashboard",
+        "packages/customers",
+        "packages/products",
+        "packages/orders"
     ],
     "scripts": {
         "build": "npm run build --workspaces",

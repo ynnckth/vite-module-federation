@@ -1,18 +1,15 @@
 {
-    "name": "vite-module-federation",
-    "private": true,
-    "version": "1.0.0",
-    "workspaces": [
-        "packages/dashboard",
-        "packages/customers",
-        "packages/products",
-        "packages/orders"
-    ],
-    "scripts": {
-        "build": "npm run build --workspaces",
-        "preview": "npm run preview --workspaces"
-    },
-    "devDependencies": {
-        "prettier": "2.8.8"
-    }
+  "name": "vite-module-federation",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "find packages -name 'package.json' -maxdepth 2 | xargs -I {} dirname {} | parallel 'cd {} && npm run build'",
+    "preview": "find packages -name 'package.json' -maxdepth 2 | xargs -I {} dirname {} | parallel 'cd {} && npm run preview'"
+  },
+  "devDependencies": {
+    "prettier": "2.8.8"
+  }
 }

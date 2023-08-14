@@ -1,5 +1,5 @@
 // SvelteWrapper.tsx
-import React, { useRef, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 
 type SvelteComponent = new (options: { target: Element | null; props?: { [key: string]: any } }) => { $destroy(): void };
 

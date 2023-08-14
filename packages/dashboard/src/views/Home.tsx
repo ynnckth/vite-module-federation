@@ -1,11 +1,18 @@
 import React, { Suspense } from "react";
+import SvelteWrapper from "./SvelteWrapper";
 
 // TODO: fix exporting and importing TS types
 const CustomersWidget = React.lazy(() => import("customers/CustomersWidget"));
-const ProductsWidget = React.lazy(() => import("products/ProductsWidget"));
 const OrdersWidget = React.lazy(() => import("orders/OrdersWidget"));
+const ProductsWidget = React.lazy(async () => {
+  const SvelteComponent = await import('products/ProductsWidget');
+  const WrappedComponent = SvelteWrapper(SvelteComponent.default);
+  return { default: WrappedComponent };
+});
 
 const Home: React.FC = () => {
+
+
   return (
     <div>
       <h2>Home</h2>
